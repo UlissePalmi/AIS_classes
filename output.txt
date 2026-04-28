@@ -1,0 +1,149 @@
+============================================================
+Q1 - Validation (Jan 1975)
+  High return: 0.159713  (expected 0.159713)
+  Low  return: 0.180787  (expected 0.180787)
+
+Q1 - First 12 months of Long-Short returns:
+  Date  High_Return  Low_Return  LS_Return
+197501     0.159713    0.180787  -0.021075
+197502     0.053288    0.052512   0.000775
+197503     0.049263    0.064937  -0.015675
+197504     0.062912    0.041975   0.020937
+197505     0.040662    0.050400  -0.009738
+197506     0.062625    0.058088   0.004537
+197507    -0.046263   -0.061450   0.015187
+197508    -0.031362   -0.012750  -0.018612
+197509    -0.027863   -0.045950   0.018087
+197510     0.049062    0.059287  -0.010225
+197511     0.034013    0.023537   0.010475
+197512    -0.006125   -0.007300   0.001175
+
+============================================================
+Q2 - Annualized Performance (Long-Short Portfolio)
+  Annualized Mean Return : 0.0338 (3.38%)
+  Annualized Std Dev     : 0.0950 (9.50%)
+  Sharpe Ratio           : 0.3560
+
+============================================================
+Q3 - Maximum Drawdown
+  Max Drawdown           : -0.3172 (-31.72%)
+  Drawdown Start (Peak)  : 200806
+  Trough                 : 201202
+  Recovery Date          : 202012
+  Months to Recover      : 150
+
+============================================================
+Q4 - Leverage for 12% Annual Volatility Target
+  Current Ann. Volatility: 9.50%
+  Scale Factor           : 1.2630
+  Required Leverage      : 2.5260x
+  (Each side weight      : 1.2630)
+
+============================================================
+Q5 - Single-Factor Model (LS ~ mktrf)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                 -0.002
+Method:                 Least Squares   F-statistic:                  0.003065
+Date:                Tue, 28 Apr 2026   Prob (F-statistic):              0.956
+Time:                        11:37:40   Log-Likelihood:                 1306.9
+No. Observations:                 600   AIC:                            -2610.
+Df Residuals:                     598   BIC:                            -2601.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0028      0.001      2.491      0.013       0.001       0.005
+mktrf         -0.0014      0.025     -0.055      0.956      -0.050       0.047
+==============================================================================
+Omnibus:                       34.322   Durbin-Watson:                   1.864
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               74.836
+Skew:                          -0.320   Prob(JB):                     5.62e-17
+Kurtosis:                       4.607   Cond. No.                         22.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+  Idiosyncratic Vol (sigma_e) monthly: 0.027450
+  Idiosyncratic Vol (sigma_e) annual : 0.095090
+
+============================================================
+Q6 - Optimal Two-Asset Portfolio (Market + Long-Short)
+  Optimal Weight in LS Strategy : 1.0302
+  Optimal Weight in Market Port.: -0.0302
+  (Inputs: alpha=0.002829, sigma_e^2=0.000754,
+   mean_mktrf=0.007423, var_mktrf=0.002037)
+
+============================================================
+Q7 - Correlations of LS Portfolio with Known Factors
+  corr(LS, MKTRF) : -0.0023
+  corr(LS, SMB  ) : 0.0841
+  corr(LS, HML  ) : -0.1949
+  corr(LS, UMD  ) : 0.7013
+
+============================================================
+Q8 - Fama-French 3-Factor Model (LS ~ mktrf + smb + hml)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.044
+Model:                            OLS   Adj. R-squared:                  0.039
+Method:                 Least Squares   F-statistic:                     9.145
+Date:                Tue, 28 Apr 2026   Prob (F-statistic):           6.35e-06
+Time:                        11:37:40   Log-Likelihood:                 1320.4
+No. Observations:                 600   AIC:                            -2633.
+Df Residuals:                     596   BIC:                            -2615.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0034      0.001      3.008      0.003       0.001       0.006
+mktrf         -0.0340      0.026     -1.334      0.183      -0.084       0.016
+smb            0.0641      0.038      1.687      0.092      -0.011       0.139
+hml           -0.1721      0.036     -4.756      0.000      -0.243      -0.101
+==============================================================================
+Omnibus:                       35.102   Durbin-Watson:                   1.870
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               64.109
+Skew:                          -0.390   Prob(JB):                     1.20e-14
+Kurtosis:                       4.398   Cond. No.                         35.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+============================================================
+Q8 - Carhart 4-Factor Model (LS ~ mktrf + smb + hml + umd)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.508
+Model:                            OLS   Adj. R-squared:                  0.504
+Method:                 Least Squares   F-statistic:                     153.5
+Date:                Tue, 28 Apr 2026   Prob (F-statistic):           3.95e-90
+Time:                        11:37:40   Log-Likelihood:                 1519.5
+No. Observations:                 600   AIC:                            -3029.
+Df Residuals:                     595   BIC:                            -3007.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.0001      0.001     -0.154      0.878      -0.002       0.001
+mktrf          0.0567      0.019      3.029      0.003       0.020       0.093
+smb            0.0553      0.027      2.028      0.043       0.002       0.109
+hml           -0.0096      0.027     -0.356      0.722      -0.062       0.043
+umd            0.4524      0.019     23.678      0.000       0.415       0.490
+==============================================================================
+Omnibus:                       15.007   Durbin-Watson:                   1.987
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               29.254
+Skew:                          -0.058   Prob(JB):                     4.44e-07
+Kurtosis:                       4.075   Cond. No.                         36.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Model Choice: Carhart 4-Factor is used to assess incremental alpha.
+Rationale: UMD captures single-stock momentum; controlling for it isolates
+the alpha that is purely due to industry-level momentum, not stock-level.
