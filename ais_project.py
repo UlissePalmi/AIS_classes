@@ -33,8 +33,8 @@ ls_returns   = high_returns - low_returns
 
 print("=" * 60)
 print("Q1 - Validation (Jan 1975)")
-print(f"  High return: {high_returns.iloc[0]:.6f}  (expected 0.159713)")
-print(f"  Low  return: {low_returns.iloc[0]:.6f}  (expected 0.180787)")
+print(f"  High return: {high_returns.iloc[0]:.7f}")
+print(f"  Low  return: {low_returns.iloc[0]:.7f}")
 print()
 print("Q1 - First 12 months of Long-Short returns:")
 first12 = pd.DataFrame({
@@ -43,7 +43,7 @@ first12 = pd.DataFrame({
     "Low_Return":  low_returns.iloc[:12].values,
     "LS_Return":   ls_returns.iloc[:12].values,
 })
-print(first12.to_string(index=False))
+print(first12.to_string(index=False, float_format=lambda x: f"{x:.7f}"))
 
 # ── Q2: Annualized Mean, Std, Sharpe ─────────────────────────────────────────
 ann_mean   = ls_returns.mean() * 12
@@ -53,7 +53,7 @@ sharpe     = ann_mean / ann_std
 print()
 print("=" * 60)
 print("Q2 - Annualized Performance (Long-Short Portfolio)")
-print(f"  Annualized Mean Return : {ann_mean:.4f} ({ann_mean*100:.2f}%)")
+print(f"  Annualized Mean Return : {ann_mean} ({ann_mean*100}%)")
 print(f"  Annualized Std Dev     : {ann_std:.4f} ({ann_std*100:.2f}%)")
 print(f"  Sharpe Ratio           : {sharpe:.4f}")
 
