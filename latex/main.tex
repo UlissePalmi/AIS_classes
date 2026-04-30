@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\title{AIS Project}
+\author{Juan Espinoza, Jianxiong Zheng, Ramsey To, Ulisse Palmiero}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+We believe we should not move forward with the proposed strategy as a standalone active strategy.
+
+The long-short momentum strategy shows some attractive features, especially its very low correlation
+with the market and its positive annualized return of 3.36%. The annualized volatility is 9.50%,
+producing a Sharpe ratio of 0.3540. However, this level of risk-adjusted performance is not strong
+enough to justify full implementation, especially given the strategy’s downside risk. The maximum
+drawdown is -31.72%, beginning in May 2008, and the recovery period is 150 months, which indicates
+that investors may need to tolerate a very long period of underperformance.
+
+The regression results also weaken the investment case. In the single-factor model, the strategy appears
+to have a positive monthly alpha of 0.2815% with a statistically significant p-value of 0.0136, while its
+market beta is almost zero. However, once we control for additional factors using the Carhart model,
+the alpha becomes economically small and statistically insignificant. The intercept is -0.0145% per
+month with a p-value of 0.8593, while the UMD coefficient is large and highly significant. This suggests
+that the strategy’s returns are mainly explained by exposure to the momentum factor rather than by
+unique alpha generation.
+
+Although the strategy can provide diversification benefits when combined with the market portfolio, we
+do not recommend moving forward with it as proposed. Achieving a 12% volatility target would require
+126.30% exposure on both the long and short sides, resulting in 252.59% gross leverage. This creates
+meaningful implementation risk, and transaction costs, shorting costs, and turnover would likely reduce
+realized returns. Therefore, we would only consider this strategy as a small diversifying allocation after
+further testing on trading costs, capacity, and risk controls.
+
+\input{results.tex}
+
+\end{document}

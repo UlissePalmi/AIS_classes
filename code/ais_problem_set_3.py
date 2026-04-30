@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+os.chdir(Path(__file__).resolve().parent.parent)
+
 import pandas as pd
 
 def fix_index(df):
